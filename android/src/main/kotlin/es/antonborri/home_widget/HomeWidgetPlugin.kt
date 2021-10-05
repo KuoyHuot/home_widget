@@ -39,7 +39,7 @@ class HomeWidgetPlugin : FlutterPlugin, MethodCallHandler, ActivityAware,
             "saveWidgetData" -> {
                 if (call.hasArgument("id") && call.hasArgument("data")) {
                     val id = call.argument<String>("id")
-                    val data = call.argument<Any>("data")
+                    val data = call.argument<Any?>("data")
                     val prefs = context.getSharedPreferences(PREFERENCES, Context.MODE_PRIVATE).edit()
                     if(data != null) {
                         when (data) {
